@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中转站</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .light {
+            background: #f0f2f5;
+            color: #333333;
+        }
+
+        .dark {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .link-btn, .mode-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .light .link-btn, .light .mode-btn {
+            background: #ffffff;
+            color: #333333;
+        }
+
+        .dark .link-btn, .dark .mode-btn {
+            background: #333333;
+            color: #ffffff;
+        }
+
+        .link-btn:hover, .mode-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .light .link-btn:hover, .light .mode-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .dark .link-btn:hover, .dark .mode-btn:hover {
+            background: #444444;
+        }
+
+        .mode-btn {
+            margin-top: 20px;
+            font-size: 0.9em;
+            background: none;
+        }
+    </style>
+</head>
+<body class="light">
+    <div class="container">
+        <h1>中转站</h1>
+        <div class="buttons">
+            <a href="https://www.youtube.com" class="link-btn">YouTube</a>
+            <a href="https://www.github.com" class="link-btn">GitHub</a>
+            <a href="https://www.x.com" class="link-btn">X</a>
+            <button class="mode-btn" onclick="toggleMode()">夜间模式</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const modeBtn = document.querySelector('.mode-btn');
+            
+            if (body.classList.contains('light')) {
+                body.classList.remove('light');
+                body.classList.add('dark');
+                modeBtn.textContent = '白天模式';
+            } else {
+                body.classList.remove('dark');
+                body.classList.add('light');
+                modeBtn.textContent = '夜间模式';
+            }
+        }
+    </script>
+</body>
+</html>
